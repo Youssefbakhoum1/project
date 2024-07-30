@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ post.title }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        nav {
+            background-color: #FF0000; /* Changed to red */
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #FF6347; /* Changed to a slightly different shade of red */
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        header {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin: 0;
+        }
+
+        .post-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-container h1 {
+            color: #4CAF50;
+        }
+
+        .post-container p.date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .post-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #4CAF50;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .post-container button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'posts_list' %}">Products</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'users:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'users:login' %}">Login</a>
+            <a href="{% url 'users:register' %}">Register</a>
+        {% endif %}
+    </nav>
+    <header>
+        <h1>{{ post.title }}</h1>
+    </header>
+    <section class="post-container">
+        {% if post.banner %}
+            <img src="{{ post.banner.url }}" alt="{{ post.title }}">
+        {% endif %}
+        <p class="date">{{ post.date }}</p>
+        <p>{{ post.body }}</p>
+        <button type="button">Get me</button>
+    </section>
+</body>
+</html>
