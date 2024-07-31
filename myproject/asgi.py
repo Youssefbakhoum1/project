@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """
 ASGI config for myproject project.
 
@@ -15,7 +15,7 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_asgi_application()
-=======
+
 """
 ASGI config for myproject project.
 
@@ -32,4 +32,3 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_asgi_application()
->>>>>>> ea8a68fe7b0217bb4c2e78e8e5b70aeb0995d610

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """
 URL configuration for myproject project.
 
@@ -36,7 +36,7 @@ urlpatterns = [
    path('users/', include(('users.urls', 'users'), namespace='users')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
-=======
+
 """
 URL configuration for myproject project.
 
@@ -74,5 +74,5 @@ urlpatterns = [
    path('users/', include(('users.urls', 'users'), namespace='users')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
->>>>>>> ea8a68fe7b0217bb4c2e78e8e5b70aeb0995d610
+
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

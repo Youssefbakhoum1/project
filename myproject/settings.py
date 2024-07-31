@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """
 Django settings for myproject project.
 
@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-=======
+
 """
 Django settings for myproject project.
 
@@ -266,4 +266,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
->>>>>>> ea8a68fe7b0217bb4c2e78e8e5b70aeb0995d610
+
